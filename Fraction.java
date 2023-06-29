@@ -9,7 +9,7 @@ public class Fraction {
 
    public Fraction(String decimal) {
        int dotIndex = decimal.indexOf(NumberFormatter.INSTANCE.getDecimalSeparatorSymbol());
-       if (decimal.substring(dotIndex).length() >= 7) {
+       if (decimal.substring(dotIndex).length() >= 7 && !decimal.contains("E")) {
            isInfinitive = true;
            infinitiveValue = Double.parseDouble(decimal);
        } else {
